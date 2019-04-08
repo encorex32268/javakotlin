@@ -11,12 +11,6 @@ fun main() {
     println("Please input your number :")
     while (number != secret){
         number = scanner.nextInt()
-
-//        when(secret>0){
-//            number>secret -> println("lower")
-//            number < secret -> println("higher")
-//            else -> println("Great number is $number")
-//        }
         if (number>secret){
             println("lower")
         }else if(number < secret){
