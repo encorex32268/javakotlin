@@ -18,6 +18,43 @@ public class Student {
     }
 
     public void print(){
-        System.out.println(name +"\t"+english +"\t"+math+"\t"+(english+math)/2);
+        System.out.println(name +"\t"+english +"\t"+math+"\t"+ getAverage());
+        passOrFailed();
+        System.out.println(garding());
+    }
+
+    private char garding() {
+        char result ;
+        switch (getAverage()/10){
+            case 10:
+            case 9:
+                result = 'A';
+                break;
+            case 8:
+                result = 'B';
+                break;
+            case 7:
+                result = 'C';
+                break;
+            case 6:
+                result = 'D';
+                break;
+                default:
+                    result = 'F';
+                    break;
+        }
+        return result;
+    }
+
+    private void passOrFailed() {
+        if (getAverage()>=60){
+            System.out.println("PASS");
+        }else {
+            System.out.println("FAILED");
+        }
+    }
+
+    private int getAverage() {
+        return (english+math)/2;
     }
 }
