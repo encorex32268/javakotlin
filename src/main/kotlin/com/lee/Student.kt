@@ -5,9 +5,17 @@ import java.util.*
 
 fun main(args: Array<String>) {
 
+//    userInput()
+    val stu = Student("Lee", 55, 66)
+    stu.print()
+
+    println("student highest is ${stu.highest()}")
+}
+
+private fun userInput() {
     val scanner = Scanner(System.`in`)
     print("Student's name ")
-    var name =null
+    var name = null
 
     print("Student's english")
     var english = scanner.nextInt()
@@ -25,5 +33,13 @@ class Student(var name :String? , var english:Int,var math :Int){
     }
     fun nameCheck(){
         print(name?.length)
+    }
+    fun highest() : Int{
+        var max = if (english > math) {
+            english
+        } else{
+            math
+        }
+        return  max
     }
 }
