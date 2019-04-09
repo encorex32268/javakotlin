@@ -7,12 +7,15 @@ public class SchoolRunner {
     public static void main(String[] args) {
 
 //        userInput();
+        Student.pass = 40;
 
-        String name = "lee";
-        int english = 80;
-        int math = 90;
-        Student student = new Student(name,english,math);
+        Student student = new Student("Lee",30,90);
         student.print();
+        Student student2 = new Student("Tom",40,50);
+        student2.print();
+        Student student3 = new Student("Jim",20,100);
+        student3.print();
+
         System.out.println("high score: "+student.highest());
 
     }
