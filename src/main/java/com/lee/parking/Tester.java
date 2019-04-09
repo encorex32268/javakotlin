@@ -13,8 +13,20 @@ public class Tester {
 
         //java8Date
 //        java8Date();
-        javaDate();
+//        javaDate();
 
+        LocalDateTime enter = LocalDateTime.of(
+                2019,4,9,13,00
+        );
+        LocalDateTime leave = LocalDateTime.of(
+                2019,4,9,15,30
+        );
+
+        Car car = new Car("AA-00999",enter);
+        car.setLeave(leave);
+        System.out.println(car.getDuration());
+        long hours = (long) Math.ceil(car.getDuration()/60.0);
+        System.out.println(hours);
     }
 
     private static void java8Date() {
