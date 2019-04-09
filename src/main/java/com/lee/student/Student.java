@@ -20,8 +20,7 @@ public class Student {
     }
 
     public void print(){
-        System.out.println(name +"\t"+english +"\t"+math+"\t"+ getAverage() +"\t" +passOrFailed());
-        System.out.println(garding());
+        System.out.println(name +"\t"+english +"\t"+math+"\t"+ getAverage() +"\t" +passOrFailed() +"\t"+garding());
     }
 
     public char garding() {

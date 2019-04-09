@@ -7,7 +7,7 @@ public class SchoolRunner {
     public static void main(String[] args) {
 
 //        userInput();
-        Student.pass = 40;
+        Student.pass = 60;
 
         Student student = new Student("Lee",30,90);
         student.print();
@@ -15,6 +15,9 @@ public class SchoolRunner {
         student2.print();
         Student student3 = new Student("Jim",20,100);
         student3.print();
+
+        GraduateStudent gstu = new GraduateStudent("jack",70,70,70);
+        gstu.print();
 
         System.out.println("high score: "+student.highest());
 

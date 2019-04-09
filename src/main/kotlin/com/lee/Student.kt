@@ -15,12 +15,29 @@ fun main(args: Array<String>) {
     val stu3 = Student("Jim", 10, 50)
     stu3.print()
 
+    val gstu3 = GraduateStudent("Jack", 100, 70,60)
+    gstu3.print()
+
     println("student highest is ${stu.highest()}")
+}
+
+class GraduateStudent(name: String?,english: Int,math: Int,thesis:Int) : Student(name, english, math){
+    companion object {
+         var pass = 90
+    }
+
+    override fun print() {
+        println("$name \t $english \t $math  \t ${getAverage()} \t ${passOrFailed()} \t ${garding()}" )
+
+    }
+
+    override fun passOrFailed()=if (getAverage()>= pass)"PASS" else "FAILED"
+
 }
 
 
 
-class Student(var name :String? , var english:Int,var math :Int){
+open class Student(var name :String? , var english:Int,var math :Int){
 
     //static
     companion object {
@@ -31,7 +48,7 @@ class Student(var name :String? , var english:Int,var math :Int){
             println("testing")
         }
     }
-    fun print(){
+     open fun print(){
         println("$name \t $english \t $math  \t ${getAverage()} \t ${passOrFailed()} \t ${garding()}" )
     }
 
@@ -42,7 +59,7 @@ class Student(var name :String? , var english:Int,var math :Int){
         in 60..69 ->'D'
         else -> 'F'
     }
-    fun passOrFailed()=if (getAverage()>=pass)"PASS" else "FAILED"
+    open fun passOrFailed()=if (getAverage()>=pass)"PASS" else "FAILED"
     fun getAverage() = (english + math) / 2
     fun nameCheck()=name?.length
     fun highest() =if (english > math) english else math
