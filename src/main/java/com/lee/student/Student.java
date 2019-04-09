@@ -18,12 +18,11 @@ public class Student {
     }
 
     public void print(){
-        System.out.println(name +"\t"+english +"\t"+math+"\t"+ getAverage());
-        passOrFailed();
+        System.out.println(name +"\t"+english +"\t"+math+"\t"+ getAverage() +"\t" +passOrFailed());
         System.out.println(garding());
     }
 
-    private char garding() {
+    public char garding() {
         char result ;
         switch (getAverage()/10){
             case 10:
@@ -46,15 +45,15 @@ public class Student {
         return result;
     }
 
-    private void passOrFailed() {
+    public String passOrFailed() {
         if (getAverage()>=60){
-            System.out.println("PASS");
+            return "PASS";
         }else {
-            System.out.println("FAILED");
+            return "FAILED";
         }
     }
 
-    private int getAverage() {
+    public int getAverage() {
         return (english+math)/2;
     }
 }
