@@ -15,10 +15,23 @@ public class Tester {
             public void run() {
                 for (int i = 0; i < 10; i++) {
                     System.out.println("thread :"+i);
+                    try {
+                        sleep(50);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         };
         thread.start();
+        //Runnable lambda
+        new Thread(()->{
+            for (int i = 0; i < 10; i++) {
+                System.out.println("thread lambda :"+i);
+            }
+        }).start();
+
+
         Thread mThread = new MyThread();
         mThread.start();
 
